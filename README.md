@@ -62,7 +62,8 @@ $ ./waf
 ## Papers
 
 ## Future work
-
+ - Hardware & network throughput dependency on energy consumption.
+ - cDRX implementation for Efficient energy consumption.
 ## Authors ##
 
  - Argha Sen
