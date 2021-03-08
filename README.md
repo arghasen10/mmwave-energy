@@ -69,8 +69,6 @@ $ ./waf
  - Argha Sen
  - Abhijit Mondal
  - Basabdatta Palit
- - Jay Jayatheerthan
- - Krishna Paul
  - Sandip Chakraborty 
 
 ## License ##
