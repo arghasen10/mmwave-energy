@@ -60,7 +60,7 @@ $ ./waf
 ```
 
 ## Papers
- - IEEE INFOCOM, Poster, 2021 - Authors: [Argha Sen](https://arghasen10.github.io/ "My Webpage"), Abhijit Mondal, Basabdatta Palit, Jay Jayatheerthan, Krishna Paul, Sandip Chakraborty [An ns3-based Energy Module of 5G NR User Equipments for Millimeter Wave Networks](https://ieeexplore.ieee.org/document/9484493 "IEEE Publication")
+ - IEEE INFOCOM, Poster, 2021 - [An ns3-based Energy Module of 5G NR User Equipments for Millimeter Wave Networks](https://ieeexplore.ieee.org/document/9484493 "IEEE Publication") - Authors: [Argha Sen](https://arghasen10.github.io/ "My Webpage"), Abhijit Mondal, Basabdatta Palit, Jay Jayatheerthan, Krishna Paul, Sandip Chakraborty
 
 ## Future work
  - Hardware & network throughput dependency on energy consumption.
