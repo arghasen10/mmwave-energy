@@ -14,6 +14,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  * Author: Michele Polese <michele.polese@gmail.com>
+ * Author: Argha Sen <arghasen10@gmail.com>
  */
 
 #include "ns3/mmwave-helper.h"
@@ -29,6 +30,7 @@
 #include "ns3/mmwave-point-to-point-epc-helper.h"
 #include "ns3/basic-energy-source-helper.h"
 #include "ns3/mmwave-energy-helper.h"
+#include "ns3/mmwave-radio-energy-model-enb-helper.h"
 //#include "ns3/gtk-config-store.h"
 #include <ns3/buildings-helper.h>
 #include <ns3/buildings-module.h>
@@ -212,12 +214,8 @@ OverlapWithAnyPrevious (Box box, std::list<Box> m_previousBlocks)
 void
 EnergyConsumptionUpdate (double totaloldEnergyConsumption, double totalnewEnergyConsumption)
 {
-  std::cout << "Total Energy Consumption " << totalnewEnergyConsumption << "J" << std::endl;
   Time currentTime = Simulator::Now ();
-  std::ofstream outFile;
-  std::string energyFileName = "energyfile.csv";
-  outFile.open (energyFileName,std::ios_base::out | std::ios_base::app);
-  outFile << currentTime.GetSeconds () << "," << totalnewEnergyConsumption << "," << (totalnewEnergyConsumption-totaloldEnergyConsumption) <<std::endl;
+  std::cout << currentTime.GetSeconds () << "," << totalnewEnergyConsumption << "," << (totalnewEnergyConsumption-totaloldEnergyConsumption) <<std::endl;
 }
 
 std::pair<Box, std::list<Box> >
@@ -617,16 +615,18 @@ main (int argc, char *argv[])
 
   // Energy Framework
   BasicEnergySourceHelper basicSourceHelper;
-  basicSourceHelper.Set ("BasicEnergySourceInitialEnergyJ", DoubleValue (10));
+  basicSourceHelper.Set ("BasicEnergySourceInitialEnergyJ", DoubleValue (1000000));
   basicSourceHelper.Set ("BasicEnergySupplyVoltageV", DoubleValue (5.0));
-  basicSourceHelper.Set ("BasicEnergySourceInitialEnergyJ", DoubleValue (100.0));
   // Install Energy Source
   EnergySourceContainer sources = basicSourceHelper.Install (ueNodes.Get (0));
+  EnergySourceContainer Enb_sources = basicSourceHelper.Install (mmWaveEnbNodes);
   // Device Energy Model
   MmWaveRadioEnergyModelHelper nrEnergyHelper;
+  MmWaveRadioEnergyModelEnbHelper enbEnergyHelper;
   DeviceEnergyModelContainer deviceEnergyModel = nrEnergyHelper.Install (mcUeDevs, sources);
+  DeviceEnergyModelContainer bsEnergyModel = enbEnergyHelper.Install (mmWaveEnbDevs, Enb_sources);
   deviceEnergyModel.Get(0)->TraceConnectWithoutContext ("TotalEnergyConsumption", MakeCallback (&EnergyConsumptionUpdate));
-  
+  bsEnergyModel.Get(0)->TraceConnectWithoutContext ("TotalEnergyConsumption", MakeCallback (&EnergyConsumptionUpdate));
   // Store Energy consumption value
   std::ofstream energyFile;
   std::string energyFileName = "energyfile.csv";
