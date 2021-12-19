@@ -5,7 +5,7 @@
 This is [ns-3](https://www.nsnam.org "ns-3 Website") mmwave-energy module for analyzing and exploring the energy consumption behavior of User Equipments (UEs) and Base Stations(BSs) under 5G communication protocols. The module developed includes a complete Radio Resource Control(RRC) state machine for 5G NR recommended by 3GPP specification [38.840]. [ns-3 mmwave](https://github.com/nyuwireless-unipd/ns3-mmwave "mmWave ns-3 module") is used as a base, on top of which we will add our module as plug-in.
 
 
-### Installation of ns3-mmwave repository
+# Installation #
 
 To download a working copy of the ns3-mmwave repository with the latest changes,
 you can do the following:
