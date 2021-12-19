@@ -1,6 +1,6 @@
 /* -*- Mode:C++; c-file-style:"gnu"; indent-tabs-mode:nil; -*- */
 /*
- * Copyright (c) 2020 IITKGP
+ * Copyright (c) 2021 IITKGP
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 as
@@ -18,7 +18,8 @@
  * Author: Argha Sen <arghasen10@gmail.com>
  * Author: Abhijit Mondal <abhijit.manpur@gmail.com>
  * Author: Basabdatta Palit <basabdatta.iitkgp@gmail.com>
- * Author: Niloy Ganguly <gangulyniloy@gmail.com>
+ * Author: Sashank Bonda
+ * Author: Jay Jayatheerthan 
  * Author: Sandip Chakraborty <sandipchkraborty@gmail.com>
  */
 #include "ns3/simulator.h"
