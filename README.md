@@ -2,10 +2,10 @@
 
 # mmwave-energy ns-3 module #
 
-This is an [ns-3](https://www.nsnam.org "ns-3 Website") mmwave-energy module for analyzing and exploring the power consumption behavior of 5G communication protocols under NR technology. The module developed includes a complete Radio Resource Control(RRC) state machine for 5G NR recommended by 3GPP specification [38.840]. [Ns-3 mmwave](https://github.com/nyuwireless-unipd/ns3-mmwave "mmWave ns-3 module") is used as a base, on top of which we will add our module as plug-in.
+This is [ns-3](https://www.nsnam.org "ns-3 Website") mmwave-energy module for analyzing and exploring the energy consumption behavior of User Equipments (UEs) and Base Stations(BSs) under 5G communication protocols. The module developed includes a complete Radio Resource Control(RRC) state machine for 5G NR recommended by 3GPP specification [38.840]. [ns-3 mmwave](https://github.com/nyuwireless-unipd/ns3-mmwave "mmWave ns-3 module") is used as a base, on top of which we will add our module as plug-in.
 
 
-### Brand new installation of ns3-mmwave repository
+### Installation of ns3-mmwave repository
 
 To download a working copy of the ns3-mmwave repository with the latest changes,
 you can do the following:
@@ -26,7 +26,7 @@ $ ./waf
 
 A success for both previous commands indicates an overall success.
 
-### Brand new installation of the mmwave-energy module
+### Installation of the mmwave-energy module
 
 As a precondition to the following steps, you must have a working local git
 repository of ns3-mmwave. If that is the case, then, your local git repo is ready
@@ -48,7 +48,7 @@ lives inside the other.
 Let's configure the project:
 
 ```
-$ ./waf configure --enable-examples --enable-tests
+$ ./waf configure
 ```
 
 If the mmwave-energy module is recognized correctly, you should see "mmwave-energy" in the list of
@@ -65,12 +65,26 @@ $ ./waf
 ## Future work
  - Hardware & network throughput dependency on energy consumption.
  - cDRX implementation for Efficient energy consumption.
-## Authors ##
+## Contributors ##
 
  - Argha Sen
- - Abhijit Mondal
  - Basabdatta Palit
+ - Abhijit Mondal
+ - Sashank Bonda
+ - Jay Jayatheerthan
  - Sandip Chakraborty 
+
+## Cite this ##
+```tex
+@inproceedings{sen2021ns3,
+  title={An ns3-based Energy Module of 5G NR User Equipments for Millimeter Wave Networks},
+  author={Sen, Argha and Mondal, Abhijit and Palit, Basabdatta and Jayatheerthan, Jay and Paul, Krishna and Chakraborty, Sandip},
+  booktitle={IEEE INFOCOM 2021-IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS)},
+  pages={1--2},
+  year={2021},
+  organization={IEEE}
+}
+```
 
 ## License ##
 
