@@ -33,7 +33,7 @@
 
 namespace ns3{
 
-
+NS_LOG_COMPONENT_DEFINE("MmWaveRadioEnergyModelEnbHelper");
 MmWaveRadioEnergyModelEnbHelper::MmWaveRadioEnergyModelEnbHelper ()
 {
     m_radioEnergy.SetTypeId ("ns3::MmWaveRadioEnergyModelEnb");
