@@ -476,10 +476,10 @@ main (int argc, char *argv[])
 
   // set the number of antennas in the devices
   Config::SetDefault ("ns3::McUeNetDevice::AntennaNum", UintegerValue(16));
-  Config::SetDefault ("ns3::MmWaveNetDevice::AntennaNum", UintegerValue(64));
+  //Config::SetDefault ("ns3::MmWaveNetDevice::AntennaNum", UintegerValue(64));
   
   // set to false to use the 3GPP radiation pattern (proper configuration of the bearing and downtilt angles is needed) 
-  Config::SetDefault ("ns3::ThreeGppAntennaArrayModel::IsotropicElements", BooleanValue (true)); 
+  //Config::SetDefault ("ns3::ThreeGppAntennaArrayModel::IsotropicElements", BooleanValue (true)); 
 
   Ptr<MmWaveHelper> mmwaveHelper = CreateObject<MmWaveHelper> ();
   mmwaveHelper->SetPathlossModelType ("ns3::ThreeGppUmiStreetCanyonPropagationLossModel");
